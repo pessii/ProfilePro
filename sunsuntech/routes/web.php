@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductionController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// 表示側のトップページ画面
+Route::get('/', [ProductionController::class, 'index'])->name('productions.index');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// 管理側のトップページ画面
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+
+// 管理側のプロフィール編集画面
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+// プロフィールの更新
+Route::put('/profile/update', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');

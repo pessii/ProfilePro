@@ -1,0 +1,38 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\ProfileRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class ProfileController extends Controller
+{
+    /**
+     * 表示側のプロフィール表示
+     *
+     * @return void
+     */
+    public function index()
+    {
+        $loginUser = Auth::user();
+        return view('profiles.index', compact('loginUser'));
+    }
+
+    public function update(ProfileRequest $request)
+    {
+        $user = Auth::user();
+
+        $user->name = $request->input('name');
+        $user->self_introduction = $request->input('self_introduction');
+        $user->email = $request->input('email');
+        // パスワードをハッシュ化して保存
+        $user->password = bcrypt($request->input('password'));
+        $user->profile_path = $request->input('profile_path');
+        
+        // ユーザー情報を保存する
+        $user->save();
+
+        return redirect(route('profile'))->with('success', 'プロフィールが更新されました');
+    }
+}
