@@ -20,5 +20,9 @@ COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 # Laravelを使うためComposerをインストール
 COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
 
+# Node.jsをインストール
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt-get install -y nodejs
+
 # $ docker-compose exec コンテナ名 bash というコマンドを実行する時のコンテナ名
 WORKDIR /php
