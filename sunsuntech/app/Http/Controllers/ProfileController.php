@@ -19,6 +19,12 @@ class ProfileController extends Controller
         return view('profiles.index', compact('loginUser'));
     }
 
+    /**
+     * 管理側のプロフィール編集画面
+     *
+     * @param ProfileRequest $request
+     * @return void
+     */
     public function update(ProfileRequest $request)
     {
         $user = Auth::user();
@@ -26,7 +32,7 @@ class ProfileController extends Controller
         $user->name = $request->input('name');
         $user->self_introduction = $request->input('self_introduction');
         $user->email = $request->input('email');
-        // パスワードをハッシュ化して保存
+        // パスワードをハッシュ化
         $user->password = bcrypt($request->input('password'));
         $user->profile_path = $request->input('profile_path');
         

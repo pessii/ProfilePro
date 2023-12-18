@@ -27,3 +27,7 @@ Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->na
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 // プロフィールの更新
 Route::put('/profile/update', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+
+// 管理側のスキル編集画面
+Route::get('/skill', [App\Http\Controllers\SkillController::class, 'index'])->name('skill');
+
