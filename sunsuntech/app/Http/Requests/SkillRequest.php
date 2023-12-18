@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;  
 use Illuminate\Support\Facades\Auth;
 
-class ProfileRequest extends FormRequest  
+class SkillRequest extends FormRequest  
 {
     public function rules()
     {

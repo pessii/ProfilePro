@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 use App\Http\Requests\ProfileRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,9 +38,17 @@ class ProfileController extends Controller
         $user->password = bcrypt($request->input('password'));
         $user->profile_path = $request->input('profile_path');
         
-        // ユーザー情報を保存する
-        $user->save();
+        DB::beginTransaction();
+        try{
+            // ユーザー情報を保存する
+            $user->save();
 
-        return redirect(route('profile'))->with('success', 'プロフィールが更新されました');
+            DB::commit();
+
+            return redirect(route('profile'))->with('success', 'プロフィールが更新されました');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect(route('profile'))->with('success', 'プロフィールが更新されませんでした');
+        }
     }
 }

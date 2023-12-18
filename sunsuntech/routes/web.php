@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SkillController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +32,5 @@ Route::put('/profile/update', [App\Http\Controllers\ProfileController::class, 'u
 
 // 管理側のスキル編集画面
 Route::get('/skill', [App\Http\Controllers\SkillController::class, 'index'])->name('skill');
-
+// スキルの更新
+Route::post('/skill/update', [App\Http\Controllers\SkillController::class, 'update'])->name('skill.update');
