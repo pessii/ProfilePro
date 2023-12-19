@@ -26,6 +26,26 @@ class SkillRepository
             ->get();
     }
 
+    public function getUserSkillList($userId)
+    {
+        return Skill::join('users_skills_types', 'skills.id', '=', 'users_skills_types.skill_id')
+            ->where('users_skills_types.user_id', $userId)    
+            ->get();
+    }
+
+    /**
+     * 新しいスキルを作成
+     *
+     * @return void
+     */
+    public function createSkill($createSkillName, $createSkillFilePath)
+    {
+        return Skill::create([
+            'skill_name' => $createSkillName,
+            'skill_file_path' => $createSkillFilePath,
+        ]);
+    }
+
     /**
      * スキルの物理削除
      *
@@ -44,5 +64,20 @@ class SkillRepository
     public function registerUserSkillTypeList($setUserSkillTypes)
     {
         return UsersSkillsType::insert($setUserSkillTypes);
+    }
+
+    /**
+     * 新しいスキル情報を登録する
+     *
+     * @param int $userId
+     * @param int $newSkillId
+     * @return void
+     */
+    public function createUserSkillType($userId, $newSkillId)
+    {
+        return UsersSkillsType::create([
+            'user_id' => $userId,
+            'skill_id' => $newSkillId,
+        ]);
     }
 }

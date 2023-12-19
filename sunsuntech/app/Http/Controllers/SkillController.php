@@ -30,10 +30,17 @@ class SkillController extends Controller
     {
         $loginUser = Auth::user();
 
-        // 既存スキルのみ抽出
+        // 既存スキルと登録したスキルを抽出
         $skillList = $this->skill_repository->getSkillList($loginUser->id);
 
-        return view('skills.index', compact('skillList'));
+        // ログインユーザーのスキルを抽出
+        $userSkillList = $this->skill_repository->getUserSkillList($loginUser->id);
+
+        return view('skills.index', 
+        compact(
+            'skillList',
+            'userSkillList',
+        ));
     }
 
     /**
@@ -56,13 +63,24 @@ class SkillController extends Controller
             ];
         }
 
+        // 新しいスキルを配列で取得
+        $createSkillName = $request->input('skill');
+        // 新しいスキル画像を配列で取得
+        $createSkillFilePath = $request->input('skill_file_path');
+
         DB::beginTransaction();
         try{
-            //物理削除する処理
+            // 物理削除する処理
             $this->skill_repository->deleteUserSkillTypeList($user->id);
 
             // スキル情報を登録する
             $this->skill_repository->registerUserSkillTypeList($setUserSkillTypes);
+
+            // 新しいスキルを登録して変数に格納
+            $newSkill = $this->skill_repository->createSkill($createSkillName, $createSkillFilePath);
+
+            // 新しいスキル情報を登録する
+            $this->skill_repository->createUserSkillType($user->id, $newSkill->id);
 
             DB::commit();
             return redirect(route('skill'))->with('success', 'スキルが更新されました');
