@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-
-use App\Http\Requests\ProfileRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
+use App\Http\Requests\ProfileRequest;
 
 class ProfileController extends Controller
 {
@@ -27,7 +27,7 @@ class ProfileController extends Controller
      * @param ProfileRequest $request
      * @return void
      */
-    public function update(ProfileRequest $request)
+    public function store(ProfileRequest $request)
     {
         $user = Auth::user();
 

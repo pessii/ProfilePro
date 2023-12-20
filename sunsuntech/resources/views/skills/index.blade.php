@@ -21,7 +21,7 @@
 <br>
 
 <h2>登録するスキル</h2>
-<form method="POST" action="{{ route('skill.update') }}">
+<form method="POST" action="{{ route('skill.store') }}">
     @csrf
     @foreach($skillList as $skill)
         <label class="checkbox">

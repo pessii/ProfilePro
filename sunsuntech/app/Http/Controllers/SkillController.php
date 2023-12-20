@@ -49,7 +49,7 @@ class SkillController extends Controller
      * @param SkillRequest $request
      * @return void
      */
-    public function update(Request $request)
+    public function store(Request $request)
     {
         $user = Auth::user();
         // 選択されたスキルのIDを配列に取得

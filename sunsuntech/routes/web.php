@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\PortfolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +29,20 @@ Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->na
 // 管理側のプロフィール編集画面
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 // プロフィールの更新
-Route::put('/profile/update', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+Route::put('/profile/store', [App\Http\Controllers\ProfileController::class, 'store'])->name('profile.store');
 
 // 管理側のスキル編集画面
 Route::get('/skill', [App\Http\Controllers\SkillController::class, 'index'])->name('skill');
 // スキルの更新
-Route::post('/skill/update', [App\Http\Controllers\SkillController::class, 'update'])->name('skill.update');
+Route::post('/skill/store', [App\Http\Controllers\SkillController::class, 'store'])->name('skill.store');
+
+// 管理側のポートフォリオ管理画面
+Route::get('/portfolio/admin', [App\Http\Controllers\PortfolioController::class, 'index'])->name('portfolio.admin');
+// 管理側のポートフォリオ作成画面
+Route::get('/portfolio/create', [App\Http\Controllers\PortfolioController::class, 'create'])->name('portfolio.create');
+// 管理側のポートフォリオの作成
+Route::put('/portfolio/store', [App\Http\Controllers\PortfolioController::class, 'store'])->name('portfolio.store');
+// 管理側のポートフォリオ編集画面
+Route::get('/portfolio/edit/{id}', [App\Http\Controllers\PortfolioController::class, 'edit'])->name('portfolio.edit');
+// 管理者側のポートフォリオの更新
+Route::put('/portfolio/update/{id}', [App\Http\Controllers\PortfolioController::class, 'update'])->name('portfolio.update');

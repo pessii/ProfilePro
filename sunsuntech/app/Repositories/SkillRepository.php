@@ -26,6 +26,12 @@ class SkillRepository
             ->get();
     }
 
+    /**
+     * ログインユーザーのスキルを抽出
+     *
+     * @param int $userId
+     * @return void
+     */
     public function getUserSkillList($userId)
     {
         return Skill::join('users_skills_types', 'skills.id', '=', 'users_skills_types.skill_id')
