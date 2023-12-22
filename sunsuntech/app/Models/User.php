@@ -51,4 +51,14 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Skill::class);
     }
+
+    /**
+     * users - users_skills_types - social_medias
+     *
+     * @return void
+     */
+    public function socialMedias()
+    {
+        return $this->belongsToMany(SocialMedia::class);
+    }
 }

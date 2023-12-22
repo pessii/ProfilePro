@@ -6,4 +6,6 @@
 <a href="{{ route('skill') }}">スキル編集</a>
 <br>
 <a href="{{ route('portfolio.admin') }}">ポートフォリオ管理画面</a>
+<br>
+<a href="{{ route('socialmedia.admin') }}">ソーシャルメディア編集画面</a>
 @endsection

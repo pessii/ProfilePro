@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\SocialMediaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,8 @@ Route::put('/portfolio/store', [App\Http\Controllers\PortfolioController::class,
 Route::get('/portfolio/edit/{id}', [App\Http\Controllers\PortfolioController::class, 'edit'])->name('portfolio.edit');
 // 管理者側のポートフォリオの更新
 Route::put('/portfolio/update/{id}', [App\Http\Controllers\PortfolioController::class, 'update'])->name('portfolio.update');
+
+// 管理者側のソーシャルメディア編集画面
+Route::get('/socialmedia/admin', [App\Http\Controllers\SocialMediaController::class, 'index'])->name('socialmedia.admin');
+// 管理者側のソーシャルメディアの更新
+Route::post('/socialmedia/update', [App\Http\Controllers\SocialMediaController::class, 'update'])->name('socialmedia.update');

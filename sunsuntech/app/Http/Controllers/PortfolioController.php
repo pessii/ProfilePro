@@ -60,7 +60,6 @@ class PortfolioController extends Controller
             return redirect()->route('portfolio.admin')->with('success', 'ポートフォリオを作成しました');
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e);
             return redirect()->route('portfolio.create')->with('success', 'ポートフォリオを作成できませんでした');
         }
     }
@@ -99,7 +98,6 @@ class PortfolioController extends Controller
             return redirect()->route('portfolio.edit', ['id' => $id])->with('success', 'ポートフォリオを更新しました');
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e);
             return redirect()->route('portfolio.edit', ['id' => $id])->with('error', 'ポートフォリオを更新できませんでした');
         }
     }

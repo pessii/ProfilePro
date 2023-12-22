@@ -11,7 +11,7 @@ use App\Http\Requests\ProfileRequest;
 class ProfileController extends Controller
 {
     /**
-     * 表示側のプロフィール表示
+     * 表示側のプロフィール編集画面
      *
      * @return void
      */
@@ -22,7 +22,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * 管理側のプロフィール編集画面
+     * 管理側のプロフィール更新処理
      *
      * @param ProfileRequest $request
      * @return void

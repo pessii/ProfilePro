@@ -30,10 +30,10 @@ class SkillController extends Controller
     {
         $loginUser = Auth::user();
 
-        // 既存スキルと登録したスキルを抽出
+        // 既存スキルと登録したスキルを取得
         $skillList = $this->skill_repository->getSkillList($loginUser->id);
 
-        // ログインユーザーのスキルを抽出
+        // ログインユーザーのスキルを取得
         $userSkillList = $this->skill_repository->getUserSkillList($loginUser->id);
 
         return view('skills.index', 
