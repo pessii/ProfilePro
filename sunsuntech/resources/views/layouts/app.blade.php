@@ -62,7 +62,8 @@
                                     <a href="{{ url('/profile') }}">プロフィール編集</a><br>
                                     <a href="{{ url('/skill') }}">スキル編集</a><br>
                                     <a href="{{ url('/portfolio/admin') }}">ポートフォリオ管理画面</a><br>
-                                    <a href="{{ url('/socialmedia/admin') }}">ソーシャルメディア編集画面</a>
+                                    <a href="{{ url('/socialmedia/admin') }}">ソーシャルメディア編集画面</a><br>
+                                    <a href="{{ url('/contact') }}">お問い合わせ画面</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

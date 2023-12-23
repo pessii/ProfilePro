@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\SocialMediaController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,8 @@ Route::put('/portfolio/update/{id}', [App\Http\Controllers\PortfolioController::
 Route::get('/socialmedia/admin', [App\Http\Controllers\SocialMediaController::class, 'index'])->name('socialmedia.admin');
 // 管理者側のソーシャルメディアの更新
 Route::post('/socialmedia/update', [App\Http\Controllers\SocialMediaController::class, 'update'])->name('socialmedia.update');
+
+// 管理者側のお問い合わせ画面
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+// 管理者側のお問い合わせ送信
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
