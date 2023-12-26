@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('top/' . Auth::user()->id) }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -63,7 +63,8 @@
                                     <a href="{{ url('/skill') }}">スキル編集</a><br>
                                     <a href="{{ url('/portfolio/admin') }}">ポートフォリオ管理画面</a><br>
                                     <a href="{{ url('/socialmedia/admin') }}">ソーシャルメディア編集画面</a><br>
-                                    <a href="{{ url('/contact') }}">お問い合わせ画面</a>
+                                    <a href="{{ url('/contact') }}">お問い合わせ画面</a><br>
+                                    <a href="{{ url('/top/' . Auth::user()->id) }}">トップ画面をチェック</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

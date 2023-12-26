@@ -4,46 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Repositories\UserRepository;
+
 class ProductionController extends Controller
 {
+    private $user_repository;
+
+    public function __construct(
+        UserRepository $user_repository
+    )
+    {
+        $this->user_repository = $user_repository;
+    }
+
     /**
      * 表示側のトップページを表示
      *
      * @return void
      */
-    public function index()
+    public function index($id)
     {
-        $data = ['name' => '鈴木智哉'];
-        return view('productions.index', $data);
-    }
+        $user = $this->user_repository->getUser($id);
+        
 
-    public function create()
-    {
-        //
-    }
-
-    public function store()
-    {
-        //
-    }
-
-    public function show()
-    {
-        //
-    }
-
-    public function edit()
-    {
-        //
-    }
-
-    public function update()
-    {
-        //
-    }
-
-    public function destroy()
-    {
-        //
+        return view('productions.index');
     }
 }

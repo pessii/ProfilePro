@@ -21,7 +21,7 @@ use App\Http\Controllers\ContactController;
 */
 
 // 表示側のトップページ画面
-Route::get('/', [ProductionController::class, 'index'])->name('productions.index');
+Route::get('top/{id}', [ProductionController::class, 'index'])->name('productions.index');
 
 Auth::routes();
 

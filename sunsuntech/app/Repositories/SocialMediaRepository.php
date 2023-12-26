@@ -71,6 +71,12 @@ class SocialMediaRepository
         return $socialMediaArray;
     }
 
+    /**
+     * 既存のソーシャルメディア取得
+     *
+     * @param int $socialMediaId
+     * @return SocialMedia
+     */
     public function getExistingSocialMedia($socialMediaId)
     {
         return SocialMedia::where('id', $socialMediaId)

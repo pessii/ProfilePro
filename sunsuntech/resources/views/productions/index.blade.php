@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-{{ $name }}
+<h1>ユーザー名</h1>
+
 @endsection
