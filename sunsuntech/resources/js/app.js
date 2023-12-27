@@ -30,3 +30,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+$(document).ready(function() {
+    $('#file-input').change(function() {
+        // ファイルが選択されたらフォームを自動的に送信
+        $(this).closest('form').submit();
+    });
+});
