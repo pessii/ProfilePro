@@ -56,11 +56,13 @@ class SkillController extends Controller
         $selectedSkillId = $request->input('selected_skills');
 
         $setUserSkillTypes = [];
-        foreach ($selectedSkillId as $skillId) {
-            $setUserSkillTypes[] = [
-                'user_id' => $user->id,
-                'skill_id' => $skillId,
-            ];
+        if($selectedSkillId !== null){
+            foreach ($selectedSkillId as $skillId) {
+                $setUserSkillTypes[] = [
+                    'user_id' => $user->id,
+                    'skill_id' => $skillId,
+                ];
+            }
         }
 
         // 新しいスキルを配列で取得
@@ -76,16 +78,18 @@ class SkillController extends Controller
             // スキル情報を登録する
             $this->skill_repository->registerUserSkillTypeList($setUserSkillTypes);
 
-            // 新しいスキルを登録して変数に格納
-            $newSkill = $this->skill_repository->createSkill($createSkillName, $createSkillFilePath);
-
-            // 新しいスキル情報を登録する
-            $this->skill_repository->createUserSkillType($user->id, $newSkill->id);
+            if($createSkillName !== null && $createSkillFilePath !== null){
+                // 新しいスキルを登録して変数に格納
+                $newSkill = $this->skill_repository->createSkill($createSkillName, $createSkillFilePath);
+                // 新しいスキル情報を登録する
+                $this->skill_repository->createUserSkillType($user->id, $newSkill->id);
+            }
 
             DB::commit();
             return redirect(route('skill'))->with('success', 'スキルが更新されました');
         } catch (\Exception $e) {
             DB::rollBack();
+            dd($e);
             return redirect(route('skill'))->with('success', 'スキルが更新されませんでした');
         }
     }
