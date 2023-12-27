@@ -196,13 +196,15 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: Inter,Helvetica Neue,Arial,Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif;
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
+  --bs-body-color: #dee2e6;
   text-align: var(--bs-body-text-align);
   background-color: var(--bs-body-bg);
+  --bs-body-bg: #1a1e2e;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -763,12 +765,12 @@ progress {
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1140px;
+    max-width: 780px;
   }
 }
 @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
+    max-width: 780px;
   }
 }
 :root {
@@ -2120,10 +2122,13 @@ progress {
      -moz-appearance: none;
           appearance: none;
   background-color: var(--bs-body-bg);
+  --bs-body-bg: linear-gradient(135deg,#4a4f9c, #9761a9);
+  background-image: var(--bs-body-bg);
   background-clip: padding-box;
   border: var(--bs-border-width) solid var(--bs-border-color);
   border-radius: var(--bs-border-radius);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-color: #1a1e2e;
 }
 @media (prefers-reduced-motion: reduce) {
   .form-control {
@@ -2139,9 +2144,9 @@ progress {
 .form-control:focus {
   color: var(--bs-body-color);
   background-color: var(--bs-body-bg);
-  border-color: #86b7fe;
+  /* border-color: #86b7fe; */
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
 }
 .form-control::-webkit-date-and-time-value {
   min-width: 85px;
@@ -3008,20 +3013,23 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
+  --bs-body-bg: linear-gradient(135deg,#479aa5, #5473cb 60%, #3e509d);
+  background-image: var(--bs-body-bg);
   --bs-btn-color: #fff;
   --bs-btn-bg: #0d6efd;
-  --bs-btn-border-color: #0d6efd;
+  --bs-btn-border-color: #1a1e2e;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #0b5ed7;
-  --bs-btn-hover-border-color: #0a58ca;
+  /* --bs-btn-hover-border-color: #0a58ca; */
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #0a58ca;
-  --bs-btn-active-border-color: #0a53be;
+  /* --bs-btn-active-border-color: #0a53be; */
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #0d6efd;
-  --bs-btn-disabled-border-color: #0d6efd;
+  /* --bs-btn-disabled-border-color: #0d6efd; */
+  font-weight: bold;
 }
 
 .btn-secondary {
@@ -3378,6 +3386,7 @@ textarea.form-control-lg {
   margin-left: 0;
 }
 
+
 .dropdown-menu {
   --bs-dropdown-zindex: 1000;
   --bs-dropdown-min-width: 10rem;
@@ -3395,8 +3404,8 @@ textarea.form-control-lg {
   --bs-dropdown-divider-margin-y: 0.5rem;
   --bs-dropdown-box-shadow: var(--bs-box-shadow);
   --bs-dropdown-link-color: var(--bs-body-color);
-  --bs-dropdown-link-hover-color: var(--bs-body-color);
-  --bs-dropdown-link-hover-bg: var(--bs-tertiary-bg);
+  /* --bs-dropdown-link-hover-color: var(--bs-body-color); */
+  /* --bs-dropdown-link-hover-bg: var(--bs-tertiary-bg); */
   --bs-dropdown-link-active-color: #fff;
   --bs-dropdown-link-active-bg: #0d6efd;
   --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
@@ -3419,6 +3428,9 @@ textarea.form-control-lg {
   background-clip: padding-box;
   border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
   border-radius: var(--bs-dropdown-border-radius);
+}
+.dropdown-menu {
+  --bs-dropdown-bg: #3e509d;
 }
 .dropdown-menu[data-bs-popper] {
   top: 100%;
@@ -8774,7 +8786,7 @@ textarea.form-control-lg {
 
 .bg-white {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+  background: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) linear-gradient(135deg, #479aa5, #5473cb 60%, #3e509d);
 }
 
 .bg-body {
@@ -11976,4 +11988,26 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+
+.profile-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  color: #999;
+}
+.edit-profile {
+  font-size: 1.1rem;
+}
+.profile-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.profile-title span {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.custom-input {
+  font-size: 1.2rem;
 }
