@@ -2192,6 +2192,89 @@ progress {
   background-color: var(--bs-secondary-bg);
 }
 
+.form-skill {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--bs-body-color);
+  --bs-body-color: #1a1e2e;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: var(--bs-body-bg);
+  --bs-body-bg: linear-gradient(135deg,#4a4f9c, #9761a9);
+  background-image: var(--bs-body-bg);
+  background-clip: padding-box;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-color: #1a1e2e;
+}
+@media (prefers-reduced-motion: reduce) {
+  .form-skill {
+    transition: none;
+  }
+}
+.form-skill[type=file] {
+  overflow: hidden;
+}
+.form-skill[type=file]:not(:disabled):not([readonly]) {
+  cursor: pointer;
+}
+.form-skill:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  /* border-color: #86b7fe; */
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+.form-skill::-webkit-date-and-time-value {
+  min-width: 85px;
+  height: 1.6em;
+  margin: 0;
+}
+.form-skill::-webkit-datetime-edit {
+  display: block;
+  padding: 0;
+}
+.form-skill::-moz-placeholder {
+  color: var(--bs-secondary-color);
+  opacity: 1;
+}
+.form-skill::placeholder {
+  color: var(--bs-secondary-color);
+  opacity: 1;
+}
+.form-skill:disabled {
+  background-color: var(--bs-secondary-bg);
+  opacity: 1;
+}
+.form-skill::file-selector-button {
+  padding: 0.375rem 0.75rem;
+  margin: -0.375rem -0.75rem;
+  margin-inline-end: 0.75rem;
+  color: var(--bs-body-color);
+  background-color: var(--bs-tertiary-bg);
+  pointer-events: none;
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+  border-inline-end-width: var(--bs-border-width);
+  border-radius: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .form-skill::file-selector-button {
+    transition: none;
+  }
+}
+.form-skill:hover:not(:disabled):not([readonly])::file-selector-button {
+  background-color: var(--bs-secondary-bg);
+}
+
 .form-control-plaintext {
   display: block;
   width: 100%;
@@ -11990,6 +12073,10 @@ textarea.form-control-lg {
   }
 }
 
+.moji-p {
+  color: #999;
+}
+
 .profile-heading {
   font-size: 1.5rem;
   font-weight: bold;
@@ -12010,4 +12097,73 @@ textarea.form-control-lg {
 }
 .custom-input {
   font-size: 1.2rem;
+}
+
+.profile-heading-h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  width: 100%;
+  border: 1px solid #1a1e2e;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: var(--bs-body-bg);
+  --bs-body-bg: linear-gradient(135deg,#3e509d,#5473cb 60%,#479aa5);
+  background-image: var(--bs-body-bg);
+  border-radius: 5px;
+}
+.edit-profile-h2 {
+  font-size: 0.9rem;
+}
+.skill-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skill-item {
+  width: 25%; /* 4つの要素を横に並べるために25%の幅を設定 */
+  box-sizing: border-box;
+  margin-top: 15px; /* 上側の余白を設定 */
+  margin-bottom: 15px; /* 下側の余白を設定 */
+}
+
+.skill-check {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hidden-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px; /* 画像の幅に合わせる */
+  height: 50px; /* 画像の高さに合わせる */
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkbox-icon .checkmark {
+  display: none;
+}
+
+.hidden-checkbox:checked + .checkbox-icon {
+  border-color: #3e509d;
+  background-color: rgba(84, 115, 203, 0.5);
+}
+
+.hidden-checkbox:checked + .checkbox-icon .checkmark {
+  display: block;
+  color: #fff; /* チェックマークの色を変更 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
 }

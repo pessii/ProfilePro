@@ -67,8 +67,15 @@ class SkillController extends Controller
 
         // 新しいスキルを配列で取得
         $createSkillName = $request->input('skill');
-        // 新しいスキル画像を配列で取得
-        $createSkillFilePath = $request->input('skill_file_path');
+
+        // 画像ファイルの処理
+        $createSkillFilePath = request()->file('skill_file_path');
+        if ($createSkillFilePath !== null) {
+            // アップロードされたファイルのオリジナルのファイル名を取り出し
+            $createSkillFilePath = request()->file('skill_file_path')->getClientOriginalName();
+            // ディレクトリに保存
+            request()->file('skill_file_path')->storeAs('public/skills', $createSkillFilePath);
+        }
 
         DB::beginTransaction();
         try{

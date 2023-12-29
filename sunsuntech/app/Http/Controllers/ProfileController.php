@@ -55,8 +55,6 @@ class ProfileController extends Controller
             $avatar = request()->file('avatar')->getClientOriginalName();
             // ディレクトリに保存
             request()->file('avatar')->storeAs('public/images', $avatar);
-
-            $user->avatar = $avatar;
         } else {
             // 既に登録されてたら既存の画像を登録
             $user->avatar = $user->avatar;
