@@ -12167,3 +12167,47 @@ textarea.form-control-lg {
   font-size: 20px;
   font-weight: bold;
 }
+
+.portfolio-button {
+  display: inline-block;
+  padding: 10px 20px;
+  --bs-body-bg: linear-gradient(135deg,#479aa5, #5473cb 60%, #3e509d);
+  background-image: var(--bs-body-bg);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 1.2rem;
+  column-gap: 1.2rem;
+}
+.portfolio-card {
+  width: calc(33.33% - 20px); /* 20px は余白を考慮 */
+  margin-bottom: 20px;
+  margin: 10px; /* カードの間隔 */
+  width: 200px; /* カードの幅を調整 */
+  border: 1px solid #2b3047; /* 枠線を追加 */
+  border-radius: 8px; /* 角を丸くする */
+  padding: 10px; /* 内側の余白を設定 */
+  text-align: center; /* 中央揃え */
+  text-decoration: none; /* リンクの下線を削除 */
+  display: inline-block; /* カードを横並びにする */
+  background-color: #2b3047;
+}
+.portfolio-card img {
+  width: 150px; /* 画像の幅 */
+  height: 150px; /* 画像の高さ */
+  border-radius: 8px; /* 画像を丸くする */
+  cursor: pointer; /* マウスカーソルを変更 */
+}
+.portfolio-card h2 {
+  color: #fff;
+  margin-top: 10px; /* タイトルと画像の間隔 */
+  font-size: 1.2rem; /* タイトルのフォントサイズ */
+}

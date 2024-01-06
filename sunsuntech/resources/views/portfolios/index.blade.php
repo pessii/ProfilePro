@@ -1,20 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>ポートフォリオ管理画面</h1>
+<h1 class="profile-heading">ポートフォリオ一覧<span class="edit-profile" style="margin-left: 10px;">portfolio list</span></h2>
 
-<a href="{{ route('portfolio.create') }}">作成する</a>
-
-<h2>ポートフォリオ一覧</h2>
-
-@foreach($portfolioList as $portfolio)
-    <a href="{{ route('portfolio.edit', ['id'=>$portfolio->id]) }}">
-        {{ $portfolio->site_file_path }}
-    </a>
-    <a href="{{ route('portfolio.edit', ['id'=>$portfolio->id]) }}">
-        {{ $portfolio->serbice_name }}
-    </a>
-    <br><br>
-@endforeach
+<div class="portfolio-container">
+    @foreach($portfolioList as $portfolio)
+        <a href="{{ route('portfolio.edit', ['id'=>$portfolio->id]) }}" class="portfolio-card">
+            <img src="{{ asset('storage/portfolios/' . $portfolio->site_file_path) }}" alt="ポートフォリオ画像">
+            <h2>{{ $portfolio->serbice_name }}</h2>
+        </a>
+    @endforeach
+</div>
 
 @endsection

@@ -14,8 +14,8 @@
 <div class="skill-container">
     @foreach($userSkillList as $userSkill)
         <div class="skill-item">
-        <img src="{{ asset('storage/skills/' . $userSkill->skill_file_path) }}" alt="プロフィール画像" class="skill_image" style="width: 50px; height: 50px;">
-        <span class="profile-title">{{ $userSkill->skill_name }}</span>
+            <img src="{{ asset('storage/skills/' . $userSkill->skill_file_path) }}" alt="プロフィール画像" class="skill_image" style="width: 50px; height: 50px;">
+            <span class="profile-title">{{ $userSkill->skill_name }}</span>
         </div>
     @endforeach
 </div>
@@ -39,8 +39,9 @@
         @endforeach
     </div>
 
-    <h2 class="profile-heading-h2" style="margin-top: 30px; margin-bottom: 30px;">スキル作成<span class="edit-profile-h2" style="margin-left: 10px;">create skill</span></h2>
-    
+    <h2 class="profile-heading-h2" style="margin-top: 30px;">スキル作成<span class="edit-profile-h2" style="margin-left: 10px;">create skill</span></h2>
+    <p class="moji-p" style="margin-bottom: 30px;">スキルの作成は画像と言語名を入力してください。</p>
+
     <div class="form-group mb-4">
         <label for="skill_file_path" class="profile-title mb-1">スキル画像<span style="margin-left: 6px;">skill image</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
         <input id="skill_file_path" type="file" name="skill_file_path" class="form-skill custom-input">
@@ -48,7 +49,7 @@
 
     <div class="form-group mb-5">
         <label for="skill" class="profile-title mb-1">スキル名<span style="margin-left: 6px;">skill name</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
-        <input type="text" id="skill" class="form-control custom-input" name="skill">
+        <input type="text" id="skill" class="form-control custom-input" name="skill" placeholder="PHP">
     </div>
     <div class="d-flex justify-content-end">
         <div class="form-group" style="margin-top: 2rem;">

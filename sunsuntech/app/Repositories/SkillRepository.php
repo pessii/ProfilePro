@@ -35,7 +35,7 @@ class SkillRepository
     public function getUserSkillList($userId)
     {
         return Skill::join('users_skills_types', 'skills.id', '=', 'users_skills_types.skill_id')
-            ->where('users_skills_types.user_id', $userId)    
+            ->where('users_skills_types.user_id', $userId)
             ->get();
     }
 

@@ -18,9 +18,6 @@ class SkillsPortfoliosTable extends Migration
             $table->unsignedBigInteger('skill_id');
             $table->unsignedBigInteger('portfolio_id');
             $table->timestamps();
-
-            $table->foreign('skill_id')->references('id')->on('skills');
-            $table->foreign('portfolio_id')->references('id')->on('portfolios');
         });
     }
 

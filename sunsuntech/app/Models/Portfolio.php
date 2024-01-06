@@ -14,6 +14,10 @@ class Portfolio extends Model
         'serbice_name',
         'site_url',
         'site_file_path',
-        'explanation'
+        'explanation',
+        'project_overview',
+        'coding',
+        'design',
+        'responsibilities',
     ];
 }
