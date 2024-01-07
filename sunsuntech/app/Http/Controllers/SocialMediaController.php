@@ -31,7 +31,7 @@ class SocialMediaController extends Controller
 
         // 登録されてるソーシャルメディアを取得
         $userSocialMediaList = $this->social_media_repository->getUserSocialMediaList($loginUser->id);
-        // dd($userSocialMediaList);
+
         return view('socialmedias.index', compact('userSocialMediaList'));
     }
 

@@ -26,21 +26,20 @@
 
 <div class="links">
     <a href="{{ route('productions.index', ['id' => $id]) }}" style="display: block; text-align: center; text-decoration: none;">
-        <h2 class="link-skills">ポートフォリオ<span class="edit-profile-h2" style="margin-left: 10px;">portfolio</span></h2>
+        <h2 class="links-skills">ポートフォリオ<span class="edit-profile-h2" style="margin-left: 10px;">portfolio</span></h2>
     </a>
     <a href="{{ route('portfolio.index', ['id' => $id]) }}" style="display: block; text-align: center; text-decoration: none;">
-        <h2 class="link-portfolio">スキル<span class="edit-profile-h2" style="margin-left: 10px;">skills</span></h2>
+        <h2 class="links-portfolio">スキル<span class="edit-profile-h2" style="margin-left: 10px;">skills</span></h2>
     </a>
 </div>
 
 <div>
-    @foreach($portfolioList as $portfolio)
-        <a href="{{ route('portfolio.indexportfolio', ['id'=>$portfolio->id]) }}" class="production-portfolio-card">
-            <h2>{{ $portfolio->serbice_name }}</h2>
-            <img src="{{ asset('storage/portfolios/' . $portfolio->site_file_path) }}" alt="ポートフォリオ画像">
-        </a>
+    @foreach($SkillList as $skill)
+        <div class="skill-item">
+            <img src="{{ asset('storage/skills/' . $skill->skill_file_path) }}" alt="プロフィール画像" class="skill_image" style="width: 50px; height: 50px;">
+            <span class="profile-title">{{ $skill->skill_name }}</span>
+        </div>
     @endforeach
 </div>
-
 
 @endsection

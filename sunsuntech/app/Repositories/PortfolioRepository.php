@@ -73,6 +73,11 @@ class PortfolioRepository
             ]);
     }
 
+    public function getUserPortfolio($portfolioId)
+    {
+        return Portfolio::where('id', $portfolioId)->first();
+    }
+
     /**
      * 最後のレコードを取得
      *

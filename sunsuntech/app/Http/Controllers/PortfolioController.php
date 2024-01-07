@@ -180,4 +180,26 @@ class PortfolioController extends Controller
             return redirect()->route('portfolio.edit', ['id' => $id])->with('error', 'ポートフォリオを更新できませんでした');
         }
     }
+
+    public function indexportfolio($portfolioId)
+    {
+        // ポートフォリオIDから情報を取得
+        $portfolioData = $this->portfolio_repository->getIdPortfolio($portfolioId);
+
+        // ポートフォリオ作成したユーザーのid
+        $loginUser = $this->portfolio_repository->getUserPortfolio($portfolioId);
+
+        // ログインユーザーのスキルを取得
+        $userSkillList = $this->skill_repository->getUserSkillList($loginUser->id);
+
+        // チェック中のスキルを取得
+        $checkSkillList = $this->portfolio_repository->getSkillPortfolio($portfolioId);
+        
+        return view('portfolios.indexportfolio', 
+        compact(
+            'portfolioData',
+            'userSkillList',
+            'checkSkillList'
+        ));
+    }
 }

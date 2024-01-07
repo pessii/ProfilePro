@@ -12111,6 +12111,9 @@ textarea.form-control-lg {
   font-size: 1.2rem;
   font-weight: bold;
 }
+.portfolios-skill-file-path-profile-title {
+  font-size: 1rem;
+}
 .profile-title span {
   font-size: 0.8rem;
   font-weight: bold;
@@ -12345,4 +12348,106 @@ textarea.form-control-lg {
   color: #fff;
   margin-top: 10px; /* タイトルと画像の間隔 */
   font-size: 1.2rem; /* タイトルのフォントサイズ */
+}
+
+.production-portfolio-card {
+  max-width: 780px;
+  margin-bottom: 20px;
+  width: 100%; /* カードの幅を調整 */
+  border: 1px solid #2b3047; /* 枠線を追加 */
+  border-radius: 8px; /* 角を丸くする */
+  padding: 10px; /* 内側の余白を設定 */
+  text-align: center; /* 中央揃え */
+  text-decoration: none; /* リンクの下線を削除 */
+  display: inline-block; /* カードを横並びにする */
+  background-color: #2b3047;
+}
+.production-portfolio-card img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 8px; /* 画像を丸くする */
+  cursor: pointer; /* マウスカーソルを変更 */
+}
+.production-portfolio-card h2 {
+  text-align: left;
+  padding-left: 17px;
+  padding-bottom: 10px;
+  color: #fff;
+  margin-top: 10px; /* タイトルと画像の間隔 */
+  font-size: 1.2rem; /* タイトルのフォントサイズ */
+}
+
+.links {
+  background-color: var(--bs-body-bg);
+  --bs-body-bg: linear-gradient(135deg,#3e509d,#5473cb 60%,#479aa5);
+  background-image: var(--bs-body-bg);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 15px;
+  border: solid #1a1e2e;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.links h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.links a:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.links-portfolio {
+  color: #fff;
+  border-bottom: 5px solid white;
+}
+.link-portfolio {
+  color: #b5b6b7;
+}
+
+.links-skills {
+  color: #b5b6b7;
+}
+.link-skills {
+  color: #fff;
+  border-bottom: 5px solid white;
+}
+
+.productions-img {
+  margin-bottom: 2rem;
+}
+
+.productions-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.productions-self_introduction {
+  margin-bottom: 1rem;
+}
+
+.portfolios-serbice-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.portfolios-site-url a{
+  color: #999;
+}
+
+.portfolios-border {
+  border: 1px solid #d7d8da;
+}
+
+.portfolios-project-overview h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.portfolios-skill-file-path {
+  font-size: 1.2rem;
+  font-weight: bold;
 }

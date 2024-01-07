@@ -22,39 +22,43 @@ use App\Http\Controllers\ContactController;
 
 // 表示側のトップページ画面
 Route::get('top/{id}', [ProductionController::class, 'index'])->name('productions.index');
+// トップページポートフォリオ
+Route::get('top/portfolio/{id}', [ProductionController::class, 'indexportfolio'])->name('portfolio.index');
+// 管理側のポートフォリオ管理画面
+Route::get('top/portfolio/index/{id}', [App\Http\Controllers\PortfolioController::class, 'indexportfolio'])->name('portfolio.indexportfolio');
 
 Auth::routes();
 
-// 管理側のトップページ画面
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+    // 管理側のトップページ画面
+    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 
-// 管理側のプロフィール編集画面
-Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
-// プロフィールの更新
-Route::put('/profile/store', [App\Http\Controllers\ProfileController::class, 'store'])->name('profile.store');
+    // 管理側のプロフィール編集画面
+    Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+    // プロフィールの更新
+    Route::put('/profile/store', [App\Http\Controllers\ProfileController::class, 'store'])->name('profile.store');
 
-// 管理側のスキル編集画面
-Route::get('/skill', [App\Http\Controllers\SkillController::class, 'index'])->name('skill');
-// スキルの更新
-Route::post('/skill/store', [App\Http\Controllers\SkillController::class, 'store'])->name('skill.store');
+    // 管理側のスキル編集画面
+    Route::get('/skill', [App\Http\Controllers\SkillController::class, 'index'])->name('skill');
+    // スキルの更新
+    Route::post('/skill/store', [App\Http\Controllers\SkillController::class, 'store'])->name('skill.store');
 
-// 管理側のポートフォリオ管理画面
-Route::get('/portfolio/admin', [App\Http\Controllers\PortfolioController::class, 'index'])->name('portfolio.admin');
-// 管理側のポートフォリオ作成画面
-Route::get('/portfolio/create', [App\Http\Controllers\PortfolioController::class, 'create'])->name('portfolio.create');
-// 管理側のポートフォリオの作成
-Route::put('/portfolio/store', [App\Http\Controllers\PortfolioController::class, 'store'])->name('portfolio.store');
-// 管理側のポートフォリオ編集画面
-Route::get('/portfolio/edit/{id}', [App\Http\Controllers\PortfolioController::class, 'edit'])->name('portfolio.edit');
-// 管理者側のポートフォリオの更新
-Route::put('/portfolio/update/{id}', [App\Http\Controllers\PortfolioController::class, 'update'])->name('portfolio.update');
+    // 管理側のポートフォリオ管理画面
+    Route::get('/portfolio/admin', [App\Http\Controllers\PortfolioController::class, 'index'])->name('portfolio.admin');
+    // 管理側のポートフォリオ作成画面
+    Route::get('/portfolio/create', [App\Http\Controllers\PortfolioController::class, 'create'])->name('portfolio.create');
+    // 管理側のポートフォリオの作成
+    Route::put('/portfolio/store', [App\Http\Controllers\PortfolioController::class, 'store'])->name('portfolio.store');
+    // 管理側のポートフォリオ編集画面
+    Route::get('/portfolio/edit/{id}', [App\Http\Controllers\PortfolioController::class, 'edit'])->name('portfolio.edit');
+    // 管理者側のポートフォリオの更新
+    Route::put('/portfolio/update/{id}', [App\Http\Controllers\PortfolioController::class, 'update'])->name('portfolio.update');
 
-// 管理者側のソーシャルメディア編集画面
-Route::get('/socialmedia/admin', [App\Http\Controllers\SocialMediaController::class, 'index'])->name('socialmedia.admin');
-// 管理者側のソーシャルメディアの更新
-Route::post('/socialmedia/update', [App\Http\Controllers\SocialMediaController::class, 'update'])->name('socialmedia.update');
+    // 管理者側のソーシャルメディア編集画面
+    Route::get('/socialmedia/admin', [App\Http\Controllers\SocialMediaController::class, 'index'])->name('socialmedia.admin');
+    // 管理者側のソーシャルメディアの更新
+    Route::post('/socialmedia/update', [App\Http\Controllers\SocialMediaController::class, 'update'])->name('socialmedia.update');
 
-// 管理者側のお問い合わせ画面
-Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-// 管理者側のお問い合わせ送信
-Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+    // 管理者側のお問い合わせ画面
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+    // 管理者側のお問い合わせ送信
+    Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
