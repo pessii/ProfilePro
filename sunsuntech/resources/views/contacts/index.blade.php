@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>お問い合わせ画面</h1>
+<h1 class="profile-heading">お問い合わせ<span class="edit-profile" style="margin-left: 10px;">inquiry</span></h1>
 
 <!-- メッセージを表示 -->
 @if (session('success'))
@@ -12,25 +12,38 @@
 
 <form method="POST" action="{{ route('contact.submit') }}">
     @csrf
-    <label for="name">名前</label><br>
-    <input type="text" name="name" id="name" required><br>
 
-    <label for="email">メールアドレス</label><br>
-    <input type="email" name="email" id="email" required><br>
+    <div class="form-group mb-4">
+        <label for="name" class="profile-title mb-1">ユーザー名<span style="margin-left: 6px;">name</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
+        <input type="text" name="name" id="name" class="form-control custom-input" required>
+    </div>
 
-    <label for="category">カテゴリ</label><br>
-    <select name="category" id="category" required>
-        <option value="1">サイトへの要望</option>
-        <option value="2">エラー</option>
-        <option value="3">操作方法</option>
-        <option value="4">トラブル</option>
-        <option value="99">その他</option>
-    </select><br>
+    <div class="form-group mb-4">
+        <label for="email" class="profile-title mb-1">メールアドレス<span style="margin-left: 6px;">email</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
+        <input type="email" name="email" id="email" class="form-control custom-input" required>
+    </div>
 
-    <label for="content">内容</label><br>
-    <textarea name="content" id="content" rows="5" required></textarea><br>
+    <div class="form-group mb-4">
+        <label for="category" class="profile-title mb-1">カテゴリ<span style="margin-left: 6px;">category</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
+        <select name="category" id="category" class="select-form custom-input" required>
+            <option value="1">サイトへの要望</option>
+            <option value="2">エラー</option>
+            <option value="3">操作方法</option>
+            <option value="4">トラブル</option>
+            <option value="99">その他</option>
+        </select><br>
+    </div>
 
-    <button type="submit">送信</button>
+    <div class="form-group mb-4">
+        <label for="content" class="profile-title mb-1">内容<span style="margin-left: 6px;">content</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
+        <textarea name="content" id="content" rows="5" class="form-control custom-input" required></textarea><br>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <div class="form-group" style="margin-top: 2rem;">
+            <button type="submit" class="btn btn-primary" style="font-size: 1.2rem;">送信<span style="font-size: 0.8rem; margin-left: 6px;">send</span></button>
+        </div>
+    </div>
 </form>
 
 @endsection

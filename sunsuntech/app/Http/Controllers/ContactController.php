@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 
 use App\Mail\ContactFormMail;
 use App\Models\Contact;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -16,7 +17,7 @@ class ContactController extends Controller
         return view('contacts.index');
     }
 
-    public function submit(Request $request)
+    public function submit(ContactRequest $request)
     {
         $loginUser = Auth::user();
 

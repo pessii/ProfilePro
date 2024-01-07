@@ -9,7 +9,7 @@
             <img src="{{ asset('storage/images/' . $loginUser->avatar) }}" class="rounded-circle admin-m-img" alt="プロフィール画像">
         </div>
     </a>
-    <a href="{{ route('skill') }}" class="admin-b-button">
+    <a href="{{ route('contact.index') }}" class="admin-b-button">
         <h2 class="admin-m-h2">お問い合わせ</h2>
         <span style="font-size: 0.8rem; margin-left: 6px;">inquiry</span>
         <div class="admin-m-div-img">
@@ -18,14 +18,12 @@
     </a>
 </div>
 
-<br>
 <a href="{{ route('productions.index', ['id' => Auth::user()->id]) }}" class="admin-mb-a">
     <h2 class="admin-m-h2-a">表示確認<span style="font-size: 0.8rem; margin-left: 6px;">display confirmation</span></h2>
     <div class="admin-m-div-img">
         <img src="{{ asset('storage/images/ifn0859.png') }}" class="rounded-circle admin-m-img-a" alt="プロフィール画像">
     </div>
 </a>
-<br>
 
 <div class="admin-mb">
     <a href="{{ route('skill') }}" class="admin-m-button-4">
