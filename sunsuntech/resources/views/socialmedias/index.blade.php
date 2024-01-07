@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>ソーシャルメディア編集画面</h1>
+<h1 class="profile-heading">ソーシャルメディア編集<span class="edit-profile" style="margin-left: 10px;">social media editing</span></h1>
 
 <!-- メッセージを表示 -->
 @if (session('success'))
@@ -10,31 +10,48 @@
     </div>
 @endif
 
-<form method="POST" action="{{ route('socialmedia.update') }}">
+<form method="POST" action="{{ route('socialmedia.update') }}" enctype="multipart/form-data">
     @csrf
-    <h2>登録中のソーシャルメディア</h2>
-    @foreach($userSocialMediaList as $userSocialMedia)
-        <label class="checkbox">
-            <input type="checkbox" name="selected_social_medias[]" value="{{ $userSocialMedia->id }}" {{ $userSocialMedia->user_id ? 'checked' : '' }}>
-            {{ $userSocialMedia->social_media_name }}
-            {{ $userSocialMedia->url }}
-        </label><br>
-    @endforeach
+    <h2 class="profile-heading-h2">登録中ソーシャルメディア<span class="edit-profile-h2" style="margin-left: 10px;">registered social media</span></h2>
+
+    <div class="skill-container">
+        @foreach($userSocialMediaList as $userSocialMedia)
+            <div class="skill-item">
+                <label class="skill-check">
+                    <input type="checkbox" name="selected_social_medias[]" value="{{ $userSocialMedia->id }}" class="hidden-checkbox" {{ $userSocialMedia->user_id ? 'checked' : '' }}>
+                    <div class="checkbox-icon">
+                        <div class="checkmark" style="font-size: 1.5rem; font-weight: bold;">✓</div>
+                    </div>
+                    <img src="{{ asset('storage/socialmedias/' . $userSocialMedia->social_media_file_path) }}" alt="ソーシャルメディア画像" class="skill_image" style="width: 50px; height: 50px;">
+                    <span class="profile-title">{{ $userSocialMedia->social_media_name }}</span>
+                </label><br>
+            </div>
+        @endforeach
+    </div>
     <br>
 
-    <h2>ソーシャルメディアを登録</h2>
-    <div class="form-group">
-        <label for="social_media_name">ソーシャルメディア名</label>
-        <input id="social_media_name" type="text" class="form-control" name="social_media_name" value="{{ old('social_media_name', '') }}">
+    <h2 class="profile-heading-h2">ソーシャルメディア登録<span class="edit-profile-h2" style="margin-left: 10px;">social media name</span></h2>
+    <p class="moji-p">※登録する場合は全て必須入力</p>
+    
+    <div class="form-group mb-4">
+        <label for="social_media_file_path" class="profile-title mb-1">ソーシャルメディア画像<span style="margin-left: 6px;">social media image</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
+        <input id="social_media_file_path" type="file" name="social_media_file_path" class="form-skill custom-input">
     </div>
 
-    <div class="form-group">
-        <label for="url">URL</label>
-        <input id="url" type="text" class="form-control" name="url" value="{{ old('url', '') }}">
+    <div class="form-group mb-4">
+        <label for="social_media_name" class="profile-title mb-1">ソーシャルメディア名<span style="margin-left: 6px;">social media image</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
+        <input id="social_media_name" type="text" class="form-control custom-input" name="social_media_name" value="{{ old('social_media_name', '') }}">
     </div>
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">更新する</button>
+    <div class="form-group mb-5">
+        <label for="url" class="profile-title mb-1">URL<span style="margin-left: 6px;">url</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
+        <input id="url" type="text" class="form-control custom-input" name="url" value="{{ old('url', '') }}">
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <div  class="form-group" style="margin-top: 2rem;">
+            <button type="submit" class="btn btn-primary" style="font-size: 1.2rem;">更新<span style="font-size: 0.8rem; margin-left: 6px;">update</span></button>
+        </div>
     </div>
 </form>
 

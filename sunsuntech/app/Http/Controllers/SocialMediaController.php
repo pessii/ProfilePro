@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Repositories\SocialMediaRepository;
+use App\Http\Requests\SocialMediaRequest;
 
 class SocialMediaController extends Controller
 {
@@ -30,18 +31,18 @@ class SocialMediaController extends Controller
 
         // 登録されてるソーシャルメディアを取得
         $userSocialMediaList = $this->social_media_repository->getUserSocialMediaList($loginUser->id);
-
+        // dd($userSocialMediaList);
         return view('socialmedias.index', compact('userSocialMediaList'));
     }
 
     /**
      * ソーシャルメディア編集画面から更新処理
      *
-     * @param Request $request
+     * @param SocialMediaRequest $request
      * @param int $id
      * @return void
      */
-    public function update(Request $request)
+    public function update(SocialMediaRequest $request)
     {
         $user = Auth::user();
         // 選択されたソーシャルメディアのIDを配列に取得
@@ -69,11 +70,21 @@ class SocialMediaController extends Controller
                     'user_id' => $user->id,
                     'social_media_name' => $existingSocialMedia->social_media_name,
                     'url' => $existingSocialMedia->url,
+                    'social_media_file_path' => $existingSocialMedia->social_media_file_path,
                 ];
             }
         }
         
         $socialMedia = null;
+
+        // 画像ファイルの処理
+        $createSocialMediaFilePath = request()->file('social_media_file_path');
+        if ($createSocialMediaFilePath !== null) {
+            // アップロードされたファイルのオリジナルのファイル名を取り出し
+            $createSocialMediaFilePath = request()->file('social_media_file_path')->getClientOriginalName();
+            // ディレクトリに保存
+            request()->file('social_media_file_path')->storeAs('public/socialmedias', $createSocialMediaFilePath);
+        }
 
         DB::beginTransaction();
         try{
@@ -93,7 +104,7 @@ class SocialMediaController extends Controller
             // ソーシャルメディア名とURLが入力されてたら実行
             if($createSocialMediaName !== NULL && $createSkillUrl !== NULL){
                 // 新しいソーシャルメディアを登録して変数に格納
-                $newSocialMedia = $this->social_media_repository->createSocialMedia($createSocialMediaName, $createSkillUrl, $user->id);
+                $newSocialMedia = $this->social_media_repository->createSocialMedia($createSocialMediaName, $createSkillUrl, $user->id, $createSocialMediaFilePath);
                 // 新しいソーシャルメディア情報を登録する
                 $this->social_media_repository->createUserSocialMedia($user->id, $newSocialMedia->id);
             }

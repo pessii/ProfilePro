@@ -13,6 +13,7 @@ class SocialMedia extends Model
         'user_id',
         'social_media_name',
         'url',
+        'social_media_file_path',
     ];
 
     /**
