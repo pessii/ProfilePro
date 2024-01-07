@@ -39,12 +39,13 @@ class SocialMediaRepository
      * @param int $userId
      * @return void
      */
-    public function createSocialMedia($createSkillName, $createSkillFilePath, $userId)
+    public function createSocialMedia($createSkillName, $createSkillFilePath, $userId, $createSocialMediaFilePath)
     {
         return SocialMedia::create([
             'user_id' => $userId,
             'social_media_name' => $createSkillName,
             'url' => $createSkillFilePath,
+            'social_media_file_path' => $createSocialMediaFilePath
         ]);
     }
 
@@ -63,6 +64,7 @@ class SocialMediaRepository
                 'user_id' => $socialMediaData['user_id'],
                 'social_media_name' => $socialMediaData['social_media_name'],
                 'url' => $socialMediaData['url'],
+                'social_media_file_path' => $socialMediaData['social_media_file_path'],
             ]);
 
             $socialMediaArray[] = $socialMedia;
