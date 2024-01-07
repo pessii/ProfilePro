@@ -12168,6 +12168,122 @@ textarea.form-control-lg {
   font-weight: bold;
 }
 
+.admin-m-button-4 {
+  display: inline-block;
+  padding: 1.5rem;
+  width: 180px; /* 適切な幅を指定 */
+  height: 180px; /* 適切な高さを指定 */
+  --bs-body-bg: linear-gradient(144deg,#af99ff, #c3cbff 60%, #fff);
+  background-image: var(--bs-body-bg);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.admin-b-button-4 {
+  display: inline-block;
+  padding: 1.5rem;
+  width: 180px; /* 適切な幅を指定 */
+  height: 180px; /* 適切な高さを指定 */
+  --bs-body-bg: linear-gradient(144deg,#8fceff, #b8d3ff 70%, #fff);
+  background-image: var(--bs-body-bg);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.admin-m-h2-4 {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.admin-m-img-4 {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+.admin-mb {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  row-gap: 1.5rem;
+}
+
+.admin-m-button {
+  display: inline-block;
+  padding: 2.4rem 1.6rem 2rem;
+  --bs-body-bg: linear-gradient(135deg,#4a4f9c, #9761a9);
+  background-image: var(--bs-body-bg);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.admin-m-h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.admin-m-img {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+.admin-m-div-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-b-button {
+  display: inline-block;
+  padding: 2.4rem 1.6rem 2rem;
+  --bs-body-bg: linear-gradient(135deg,#479aa5, #5473cb 60%, #3e509d);
+  background-image: var(--bs-body-bg);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.admin-mb-div {
+  margin-top: 3.8rem;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  row-gap: 1.5rem;
+  column-gap: 1.5rem;
+}
+
+.admin-mb-a {
+  display: inline-block;
+  padding: 1.5rem;
+  width: 100%; /* 適切な幅を指定 */
+  height: 180px; /* 適切な高さを指定 */
+  --bs-body-bg: linear-gradient(120deg,#4a4f9c, #9761a9, #af99ff, #c3cbff 60%, #b8d3ff 70%, #8fceff);
+  background-image: var(--bs-body-bg);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.admin-m-h2-a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.admin-m-img-a {
+  width: 150px;
+  height: 100px;
+  cursor: pointer;
+}
+
 .portfolio-button {
   display: inline-block;
   padding: 10px 20px;

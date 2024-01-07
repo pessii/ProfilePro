@@ -1,15 +1,60 @@
 @extends('layouts.app')
 
 @section('content')
-<a href="{{ route('profile') }}">プロフィール編集</a>
+<div class="admin-mb-div">
+    <a href="{{ route('profile') }}" class="admin-m-button">
+        <h2 class="admin-m-h2">プロフィール編集</h2>
+        <span style="font-size: 0.8rem; margin-left: 6px;">edit profile</span>
+        <div class="admin-m-div-img">
+            <img src="{{ asset('storage/images/' . $loginUser->avatar) }}" class="rounded-circle admin-m-img" alt="プロフィール画像">
+        </div>
+    </a>
+    <a href="{{ route('skill') }}" class="admin-b-button">
+        <h2 class="admin-m-h2">お問い合わせ</h2>
+        <span style="font-size: 0.8rem; margin-left: 6px;">inquiry</span>
+        <div class="admin-m-div-img">
+            <img src="{{ asset('storage/images/letter_mono.png') }}" class="admin-m-img" alt="プロフィール画像">
+        </div>
+    </a>
+</div>
+
 <br>
-<a href="{{ route('skill') }}">スキル編集</a>
+<a href="{{ route('productions.index', ['id' => Auth::user()->id]) }}" class="admin-mb-a">
+    <h2 class="admin-m-h2-a">表示確認<span style="font-size: 0.8rem; margin-left: 6px;">display confirmation</span></h2>
+    <div class="admin-m-div-img">
+        <img src="{{ asset('storage/images/ifn0859.png') }}" class="rounded-circle admin-m-img-a" alt="プロフィール画像">
+    </div>
+</a>
 <br>
-<a href="{{ route('portfolio.create') }}" class="portfolio-button">ポートフォリオ作成画面<span style="font-size: 0.8rem; margin-left: 6px;">create</span></a>
-<br>
-<a href="{{ route('portfolio.admin') }}">ポートフォリオ一覧画面</a>
-<br>
-<a href="{{ route('socialmedia.admin') }}">ソーシャルメディア編集画面</a>
-<br>
-<a href="{{ route('productions.index', ['id' => Auth::user()->id]) }}">表示画面確認</a>
+
+<div class="admin-mb">
+    <a href="{{ route('skill') }}" class="admin-m-button-4">
+        <h2 class="admin-m-h2-4">スキル編集</h2>
+        <span style="font-size: 0.6rem; margin-left: 6px;">edit skills</span>
+        <div class="admin-m-div-img">
+            <img src="{{ asset('storage/images/icon_data01_01.png') }}" class="rounded-circle admin-m-img-4" alt="プロフィール画像">
+        </div>
+    </a>
+    <a href="{{ route('portfolio.create') }}" class="admin-m-button-4">
+        <h2 class="admin-m-h2-4">ポートフォリオ作成</h2>
+        <span style="font-size: 0.6rem; margin-left: 6px;">portfolio creation</span>
+        <div class="admin-m-div-img">
+            <img src="{{ asset('storage/images/pc_program_tag_icon_4126.png') }}" class="rounded-circle admin-m-img-4" alt="プロフィール画像">
+        </div>
+    </a>
+    <a href="{{ route('portfolio.admin') }}" class="admin-b-button-4">
+        <h2 class="admin-m-h2-4">ポートフォリオ一覧</h2>
+        <span style="font-size: 0.6rem; margin-left: 6px;">portfolio list</span>
+        <div class="admin-m-div-img">
+            <img src="{{ asset('storage/images/pc_program_tag_icon_4127-300x300.png') }}" class="rounded-circle admin-m-img-4" alt="プロフィール画像">
+        </div>
+    </a>
+    <a href="{{ route('socialmedia.admin') }}" class="admin-b-button-4">
+        <h2 class="admin-m-h2-4">ソーシャルメディア編集</h2>
+        <span style="font-size: 0.6rem; margin-left: 6px;">social media editing</span>
+        <div class="admin-m-div-img">
+            <img src="{{ asset('storage/images/08-06-200303-sns.png') }}" class="admin-m-img-4" alt="プロフィール画像">
+        </div>
+    </a>
+</div>
 @endsection
