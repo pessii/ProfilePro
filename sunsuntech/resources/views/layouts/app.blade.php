@@ -58,10 +58,17 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end custom-dropdown-bg" aria-labelledby="navbarDropdown">
+                                    <a href="{{ route('profile') }}" class="dropdown-item">{{ __('プロフィール編集') }}</a>
+                                    <a href="{{ route('contact.index') }}" class="dropdown-item">{{ __('お問い合わせ') }}</a>
+                                    <a href="{{ route('productions.index', ['id' => Auth::user()->id]) }}" class="dropdown-item">{{ __('表示確認') }}</a>
+                                    <a href="{{ route('skill') }}" class="dropdown-item">{{ __('スキル編集') }}</a>
+                                    <a href="{{ route('portfolio.create') }}" class="dropdown-item">{{ __('ポートフォリオ作成') }}</a>
+                                    <a href="{{ route('portfolio.admin') }}" class="dropdown-item">{{ __('ポートフォリオ一覧') }}</a>
+                                    <a href="{{ route('socialmedia.admin') }}" class="dropdown-item">{{ __('ソーシャルメディア編集') }}</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('ログアウト') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -81,5 +88,6 @@
             </div>
         </main>
     </div>
+    @yield('scripts')
 </body>
 </html>

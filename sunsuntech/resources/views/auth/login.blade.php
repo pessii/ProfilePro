@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card slide-up-element">
                 <div class="card-header">{{ __('ログイン') }}</div>
 
                 <div class="card-body">
@@ -70,4 +70,7 @@
         </div>
     </div>
 </div>
+@endsection
+@section('scripts')
+	<script src="{{ asset('/js/profile.js') }}"></script>
 @endsection
