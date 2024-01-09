@@ -22,11 +22,11 @@
 </div>
 
 <h3 class="portfolios-skill-file-path slide-up-element-3">使用したスキル</h3>
-<div class="skill-container slide-up-element-2">
+<div class="skill-container">
     @foreach($userSkillList as $userSkill)
-        <div class="skill-item">
-            <img src="{{ asset('storage/skills/' . $userSkill->skill_file_path) }}" alt="スキル画像" class="skill_image" style="width: 50px; height: 50px;">
-            <span class="portfolios-skill-file-path-profile-title">{{ $userSkill->skill_name }}</span>
+    <div class="skill-item slide-up-element-2">
+            <img src="{{ asset('storage/skills/' . $userSkill->skill_file_path) }}" alt="プロフィール画像" class="skill_image" style="width: 50px; height: 50px;">
+            <span class="profile-title">{{ $userSkill->skill_name }}</span>
         </div>
     @endforeach
 </div>

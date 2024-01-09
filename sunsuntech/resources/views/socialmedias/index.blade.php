@@ -34,17 +34,17 @@
     <p class="moji-p slide-up-element">※登録する場合は全て必須入力</p>
     
     <div class="form-group mb-4">
-        <label for="social_media_file_path" class="profile-title mb-1 slide-up-element-3">ソーシャルメディア画像<span style="margin-left: 6px;">social media image</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
+        <label for="social_media_file_path" class="profile-title2 mb-1 slide-up-element-3">ソーシャルメディア画像<span style="margin-left: 6px;">social media image</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
         <input id="social_media_file_path" type="file" name="social_media_file_path" class="form-skill custom-input slide-up-element-2">
     </div>
 
     <div class="form-group mb-4">
-        <label for="social_media_name" class="profile-title mb-1 slide-up-element-3">ソーシャルメディア名<span style="margin-left: 6px;">social media image</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
+        <label for="social_media_name" class="profile-title2 mb-1 slide-up-element-3">ソーシャルメディア名<span style="margin-left: 6px;">social media image</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
         <input id="social_media_name" type="text" class="form-control custom-input slide-up-element-2" name="social_media_name" value="{{ old('social_media_name', '') }}">
     </div>
 
     <div class="form-group mb-5">
-        <label for="url" class="profile-title mb-1 slide-up-element-3">URL<span style="margin-left: 6px;">url</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
+        <label for="url" class="profile-title2 mb-1 slide-up-element-3">URL<span style="margin-left: 6px;">url</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
         <input id="url" type="text" class="form-control custom-input slide-up-element-2" name="url" value="{{ old('url', '') }}">
     </div>
 

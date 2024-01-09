@@ -43,12 +43,12 @@
     <p class="moji-p slide-up-element" style="margin-bottom: 30px;">スキルの作成は画像と言語名を入力してください。</p>
 
     <div class="form-group mb-4">
-        <label for="skill_file_path" class="profile-title mb-1 slide-up-element-3">スキル画像<span style="margin-left: 6px;">skill image</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
+        <label for="skill_file_path" class="profile-title2 mb-1 slide-up-element-3">スキル画像<span style="margin-left: 6px;">skill image</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
         <input id="skill_file_path" type="file" name="skill_file_path" class="form-skill custom-input slide-up-element-2">
     </div>
 
     <div class="form-group mb-5">
-        <label for="skill" class="profile-title mb-1 slide-up-element-3">スキル名<span style="margin-left: 6px;">skill name</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
+        <label for="skill" class="profile-title2 mb-1 slide-up-element-3">スキル名<span style="margin-left: 6px;">skill name</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
         <input type="text" id="skill" class="form-control custom-input slide-up-element-2" name="skill" placeholder="PHP">
     </div>
     <div class="d-flex justify-content-end slide-up-element">

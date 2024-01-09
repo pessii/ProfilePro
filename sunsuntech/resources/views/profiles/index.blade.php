@@ -35,22 +35,22 @@
     </div>
 
     <div class="form-group mb-4">
-        <label for="name" class="profile-title mb-1 slide-up-element-3">ユーザー名<span style="margin-left: 6px;">name</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label>
+        <label for="name" class="profile-title2 mb-1 slide-up-element-3">ユーザー名<span style="margin-left: 6px;">name</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label>
         <input id="name" type="text" class="form-control custom-input slide-up-element-2" name="name" value="{{ old('name', $loginUser->name) }}" required>
     </div>
 
     <div class="form-group mb-4">
-        <label for="self_introduction" class="profile-title mb-1 slide-up-element-3">自己紹介<span style="margin-left: 6px;">bio</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label>
+        <label for="self_introduction" class="profile-title2 mb-1 slide-up-element-3">自己紹介<span style="margin-left: 6px;">bio</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label>
         <textarea id="self_introduction" class="form-control custom-input slide-up-element-2" name="self_introduction">{{ old('self_introduction', $loginUser->self_introduction) }}</textarea>
     </div>
 
     <div class="form-group mb-4">
-        <label for="email" class="profile-title mb-1 slide-up-element-3">メールアドレス<span style="margin-left: 6px;">email</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label>
+        <label for="email" class="profile-title2 mb-1 slide-up-element-3">メールアドレス<span style="margin-left: 6px;">email</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label>
         <input id="email" type="email" class="form-control custom-input slide-up-element-2" name="email" value="{{ old('email', $loginUser->email) }}" required>
     </div>
 
     <div class="form-group mb-4">
-        <label for="password" class="profile-title mb-1 slide-up-element-3">パスワード<span style="margin-left: 6px;">password</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
+        <label for="password" class="profile-title2 mb-1 slide-up-element-3">パスワード<span style="margin-left: 6px;">password</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
         <input id="password" type="password" class="form-control custom-input slide-up-element-2" name="password">
     </div>
 

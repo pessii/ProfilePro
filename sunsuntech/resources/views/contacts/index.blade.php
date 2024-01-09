@@ -14,17 +14,17 @@
     @csrf
 
     <div class="form-group mb-4">
-        <label for="name" class="profile-title mb-1 slide-up-element-3">ユーザー名<span style="margin-left: 6px;">name</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
+        <label for="name" class="profile-title2 mb-1 slide-up-element-3">ユーザー名<span style="margin-left: 6px;">name</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
         <input type="text" name="name" id="name" class="form-control custom-input slide-up-element-2" required>
     </div>
 
     <div class="form-group mb-4">
-        <label for="email" class="profile-title mb-1 slide-up-element-3">メールアドレス<span style="margin-left: 6px;">email</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
+        <label for="email" class="profile-title2 mb-1 slide-up-element-3">メールアドレス<span style="margin-left: 6px;">email</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
         <input type="email" name="email" id="email" class="form-control custom-input slide-up-element-2" required>
     </div>
 
     <div class="form-group mb-4">
-        <label for="category" class="profile-title mb-1 slide-up-element-3">カテゴリ<span style="margin-left: 6px;">category</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
+        <label for="category" class="profile-title2 mb-1 slide-up-element-3">カテゴリ<span style="margin-left: 6px;">category</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
         <select name="category" id="category" class="select-form custom-input slide-up-element-2" required>
             <option value="1">サイトへの要望</option>
             <option value="2">エラー</option>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="form-group mb-4">
-        <label for="content" class="profile-title mb-1 slide-up-element-3">内容<span style="margin-left: 6px;">content</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
+        <label for="content" class="profile-title2 mb-1 slide-up-element-3">内容<span style="margin-left: 6px;">content</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
         <textarea name="content" id="content" rows="5" class="form-control custom-input slide-up-element-2" required></textarea><br>
     </div>
 
