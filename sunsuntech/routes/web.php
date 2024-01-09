@@ -29,6 +29,7 @@ Route::get('top/portfolio/index/{id}', [App\Http\Controllers\PortfolioController
 
 Auth::routes();
 
+Route::middleware(['auth'])->group(function () {
     // 管理側のトップページ画面
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 
@@ -62,3 +63,4 @@ Auth::routes();
     Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
     // 管理者側のお問い合わせ送信
     Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+});
