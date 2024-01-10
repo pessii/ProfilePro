@@ -3116,6 +3116,7 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
+  font-size: 1.2rem;
   --bs-body-bg: linear-gradient(135deg,#479aa5, #5473cb 60%, #3e509d);
   background-image: var(--bs-body-bg);
   --bs-btn-color: #fff;
@@ -12151,6 +12152,10 @@ textarea.form-control-lg {
   display: flex;
   flex-wrap: wrap;
 }
+.skill-container-production{
+  display: flex;
+  flex-wrap: wrap;
+}
 .skill-item {
   width: 25%; /* 4つの要素を横に並べるために25%の幅を設定 */
   box-sizing: border-box;
@@ -12492,7 +12497,9 @@ textarea.form-control-lg {
   font-size: 0.8rem;
   font-weight: bold;
 }
-
+.form-send {
+  margin-top: 2rem;
+}
 @media screen and (max-width: 500px) {
   .links {
     background-color: var(--bs-body-bg);
@@ -12632,6 +12639,14 @@ textarea.form-control-lg {
     width: calc(33.333% - 20px); /* 20pxは要素間の隙間などの余白を考慮 */
     margin: 10px; /* 要素の余白 */
   }
+  .skill-container-production{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container-production {
+    width: calc(20% - 10px); /* 20pxは要素間の隙間などの余白を考慮 */
+    margin: 10px; /* 要素の余白 */
+  }
 
   .profile-title {
     font-size: 0.8rem;
@@ -12647,11 +12662,11 @@ textarea.form-control-lg {
   }
 
   .profile-title2 {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: bold;
   }
   .profile-title2 span {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: bold;
   }
   .form-skill {
@@ -12699,5 +12714,34 @@ textarea.form-control-lg {
   }
   .portfolio-card img {
     width: 90%;
+  }
+
+  .profile-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #999;
+  }
+  .edit-profile {
+    font-size: 0.8rem;
+  }
+  .custom-input {
+    font-size: 1rem;
+  }
+  .btn-primary {
+    font-size: 1rem;
+  }
+  .form-send {
+    margin-top: 1px;
+  }
+
+  .profile-heading-h2 {
+    font-size: 1rem;
+  }
+
+  .moji-p {
+    font-size: 0.8rem;
+    margin-left: 6px;
   }
 }

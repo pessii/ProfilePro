@@ -14,9 +14,9 @@
     {{ $user->self_introduction }}
 </div>
 
-<div class="skill-container slide-up-element">
+<div class="skill-container-production slide-up-element">
     @foreach($userSocialMediaList as $userSocialMedia)
-    <div style="margin: 0.8rem;">
+    <div class="container-production" style="margin: 0.8rem;">
         <a href="{{ $userSocialMedia->url }}" class="skill-item">
             <img src="{{ asset('storage/socialmedias/' . $userSocialMedia->social_media_file_path) }}" alt="ソーシャルメディア画像" class="skill_image" style="width: 50px; height: 50px; border-radius: 8px;">
         </a>

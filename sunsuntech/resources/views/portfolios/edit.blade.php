@@ -68,13 +68,13 @@
 
     <div class="form-group mb-4">
         <label for="coding" class="profile-title2 mb-1 slide-up-element-3">コーディングURL<span style="margin-left: 6px;">coding url</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
-        <br><small class=".profile-small">※GitHubなどのプラットフォームを使ってコードを公開することで、実際の成果物を見せることができます。</small>
+        <br><small class="profile-small">※GitHubなどのプラットフォームを使ってコードを公開することで、実際の成果物を見せることができます。</small>
         <input type="text" id="coding" class="form-control custom-input slide-up-element-2" name="coding" value="{{ old('coding', $portfolioData->coding) }}">
     </div>
 
     <div class="form-group mb-4">
         <label for="design" class="profile-title2 mb-1 slide-up-element-3">デザインURL<span style="margin-left: 6px;">design url</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
-        <br><small class=".profile-small">※Figmaなどのプラットフォームを使ってデザインを公開することで、実際のデザインを見せることができます。</small>
+        <br><small class="profile-small">※Figmaなどのプラットフォームを使ってデザインを公開することで、実際のデザインを見せることができます。</small>
         <input type="text" id="design" class="form-control custom-input slide-up-element-2" name="design" value="{{ old('design', $portfolioData->design) }}">
     </div>
 
@@ -89,8 +89,8 @@
     </div>
 
     <div class="d-flex justify-content-end slide-up-element">
-        <div class="form-group" style="margin-top: 2rem;">
-            <button type="submit" class="btn btn-primary" style="font-size: 1.2rem;">更新<span style="font-size: 0.8rem; margin-left: 6px;">edit</span></button>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">更新<span style="font-size: 0.8rem; margin-left: 6px;">edit</span></button>
         </div>
     </div>
 </form>

@@ -34,14 +34,14 @@
         </select><br>
     </div>
 
-    <div class="form-group mb-4">
+    <div class="form-group">
         <label for="content" class="profile-title2 mb-1 slide-up-element-3">内容<span style="margin-left: 6px;">content</span><span style="margin-left: 13px; background: #dc3545; color: transparent; -webkit-background-clip: text; background-clip: text;">(必須)</span></label><br>
         <textarea name="content" id="content" rows="5" class="form-control custom-input slide-up-element-2" required></textarea><br>
     </div>
 
     <div class="d-flex justify-content-end slide-up-element">
-        <div class="form-group" style="margin-top: 2rem;">
-            <button type="submit" class="btn btn-primary" style="font-size: 1.2rem;">送信<span style="font-size: 0.8rem; margin-left: 6px;">send</span></button>
+        <div class="form-group form-send">
+            <button type="submit" class="btn btn-primary">送信<span style="font-size: 0.8rem; margin-left: 6px;">send</span></button>
         </div>
     </div>
 </form>

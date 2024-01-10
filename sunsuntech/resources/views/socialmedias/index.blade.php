@@ -49,8 +49,8 @@
     </div>
 
     <div class="d-flex justify-content-end slide-up-element">
-        <div  class="form-group" style="margin-top: 2rem;">
-            <button type="submit" class="btn btn-primary" style="font-size: 1.2rem;">更新<span style="font-size: 0.8rem; margin-left: 6px;">update</span></button>
+        <div  class="form-group">
+            <button type="submit" class="btn btn-primary">更新<span style="font-size: 0.8rem; margin-left: 6px;">update</span></button>
         </div>
     </div>
 </form>

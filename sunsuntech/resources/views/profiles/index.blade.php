@@ -49,14 +49,14 @@
         <input id="email" type="email" class="form-control custom-input slide-up-element-2" name="email" value="{{ old('email', $loginUser->email) }}" required>
     </div>
 
-    <div class="form-group mb-4">
+    <div class="form-group">
         <label for="password" class="profile-title2 mb-1 slide-up-element-3">パスワード<span style="margin-left: 6px;">password</span><span style="margin-left: 13px; background: #479aa5; color: transparent; -webkit-background-clip: text; background-clip: text;">(任意)</span></label>
         <input id="password" type="password" class="form-control custom-input slide-up-element-2" name="password">
     </div>
 
     <div class="d-flex justify-content-end slide-up-element">
-        <div class="form-group" style="margin-top: 2rem;">
-            <button type="submit" class="btn btn-primary" style="font-size: 1.2rem;">保存<span style="font-size: 0.8rem; margin-left: 6px;">save</span></button>
+        <div class="form-group form-send" style="margin-top: 2rem;">
+            <button type="submit" class="btn btn-primary">保存<span style="font-size: 0.8rem; margin-left: 6px;">save</span></button>
         </div>
     </div>
 </form>
