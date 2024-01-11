@@ -14,6 +14,7 @@ class ProfileRequest extends FormRequest
             'name' => 'required|string|max:255',
             'self_introduction' => 'required|string',
             'email' => 'required|email|unique:users,email,' . $user->id,
+            'password' => 'min:6'
         ];
     }
 
@@ -23,6 +24,7 @@ class ProfileRequest extends FormRequest
             "name" => "名前",  
             "self_introduction" => "自己紹介", 
             'email' => "メールアドレス",
+            'password' => "パスワード"
         ];  
     }  
 }

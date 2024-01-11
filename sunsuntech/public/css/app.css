@@ -12500,6 +12500,12 @@ textarea.form-control-lg {
 .form-send {
   margin-top: 2rem;
 }
+.errors {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: var(--bs-form-invalid-color);
+}
 @media screen and (max-width: 500px) {
   .links {
     background-color: var(--bs-body-bg);

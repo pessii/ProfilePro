@@ -93,11 +93,12 @@ class SkillController extends Controller
             }
 
             DB::commit();
-            return redirect(route('skill'))->with('success', 'スキルが更新されました');
+            session()->flash('flashSuccess', 'スキルが更新されました');
+            return redirect(route('skill'));
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e);
-            return redirect(route('skill'))->with('success', 'スキルが更新されませんでした');
+            session()->flash('flashError', 'スキルが更新されませんでした');
+            return redirect(route('skill'));
         }
     }
 }

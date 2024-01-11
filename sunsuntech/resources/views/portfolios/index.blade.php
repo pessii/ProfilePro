@@ -14,5 +14,33 @@
 
 @endsection
 @section('scripts')
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+        }
+
+        @if (Session::has('flashSuccess'))
+            toastr.success("{{ session('flashSuccess') }}");
+        @endif
+
+        @if (Session::has('flashError'))
+            toastr.error("{{ session('flashError') }}");
+        @endif
+
+        @if (Session::has('flashInfo'))
+            toastr.info("{{ session('flashInfo') }}");
+        @endif
+
+        @if (Session::has('flashWarning'))
+            toastr.warning("{{ session('flashWarning') }}");
+        @endif
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}");
+            @endforeach
+        @endif
+    </script>
 	<script src="{{ asset('/js/profile.js') }}"></script>
 @endsection

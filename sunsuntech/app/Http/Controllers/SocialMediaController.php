@@ -110,11 +110,12 @@ class SocialMediaController extends Controller
             }
 
             DB::commit();
-            return redirect(route('socialmedia.admin'))->with('success', 'ソーシャルメディアが更新されました');
+            session()->flash('flashSuccess', 'ソーシャルメディアが更新されました');
+            return redirect(route('socialmedia.admin'));
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e);
-            return redirect(route('socialmedia.admin'))->with('success', 'ソーシャルメディアが更新されませんでした');
+            session()->flash('flashError', 'ソーシャルメディアが更新されませんでした');
+            return redirect(route('socialmedia.admin'));
         }
     }
 }

@@ -95,10 +95,12 @@ class PortfolioController extends Controller
             $this->portfolio_repository->createPortfolio($request, $loginUser->id, $site_file_path);
 
             DB::commit();
-            return redirect()->route('portfolio.admin')->with('success', 'ポートフォリオを作成しました');
+            session()->flash('flashSuccess', 'ポートフォリオを作成しました');
+            return redirect()->route('portfolio.admin');
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->route('portfolio.create')->with('success', 'ポートフォリオを作成できませんでした');
+            session()->flash('flashError', 'ポートフォリオを作成できませんでした');
+            return redirect()->route('portfolio.create');
         }
     }
 
@@ -173,11 +175,12 @@ class PortfolioController extends Controller
             $this->portfolio_repository->updateSkillsPortfoliosList($setSkillPortfolios);
 
             DB::commit();
-            return redirect()->route('portfolio.edit', ['id' => $id])->with('success', 'ポートフォリオを更新しました');
+            session()->flash('flashSuccess', 'ポートフォリオを更新しました');
+            return redirect()->route('portfolio.admin');
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e);
-            return redirect()->route('portfolio.edit', ['id' => $id])->with('error', 'ポートフォリオを更新できませんでした');
+            session()->flash('flashError', 'ポートフォリオを更新できませんでした');
+            return redirect()->route('portfolio.edit', ['id' => $id]);
         }
     }
 

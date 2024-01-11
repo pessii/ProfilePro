@@ -13,7 +13,7 @@ class ContactRequest extends FormRequest
             'name' => 'required|string', // 名前は必須で文字列であること
             'email' => 'required|email', // メールアドレスは必須で正しいメール形式であること
             'category' => 'required',
-            'content' => 'required|string', // 内容は必須で文字列であること
+            'content' => 'required|string|min:8|max:300', // 内容は必須で文字列であること
         ];
     }
 

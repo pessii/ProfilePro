@@ -3,13 +3,6 @@
 @section('content')
 <h1 class="profile-heading">スキル編集<span class="edit-profile" style="margin-left: 10px;">edit skills</span></h1>
 
-<!-- メッセージを表示 -->
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
-
 <h2 class="profile-heading-h2 slide-up-element-3">登録中スキル<span class="edit-profile-h2" style="margin-left: 10px;">registered skills</span></h2>
 <div class="skill-container">
     @foreach($userSkillList as $userSkill)
@@ -60,5 +53,33 @@
 
 @endsection
 @section('scripts')
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+        }
+
+        @if (Session::has('flashSuccess'))
+            toastr.success("{{ session('flashSuccess') }}");
+        @endif
+
+        @if (Session::has('flashError'))
+            toastr.error("{{ session('flashError') }}");
+        @endif
+
+        @if (Session::has('flashInfo'))
+            toastr.info("{{ session('flashInfo') }}");
+        @endif
+
+        @if (Session::has('flashWarning'))
+            toastr.warning("{{ session('flashWarning') }}");
+        @endif
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}");
+            @endforeach
+        @endif
+    </script>
 	<script src="{{ asset('/js/profile.js') }}"></script>
 @endsection

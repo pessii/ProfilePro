@@ -11,10 +11,10 @@ class PortfolioRequest extends FormRequest
     {
         $user = Auth::user();
         return [
-            'site_file_path' => 'required',
-            'serbice_name' => 'required',
+            'site_file_path' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'serbice_name' => 'required|max:191',
             'site_url' => 'required|url',
-            'project_overview' => 'required',
+            'project_overview' => 'required|min:8',
             'coding' => 'nullable|url',
             'design' => 'nullable|url',
             'responsibilities' => 'nullable',

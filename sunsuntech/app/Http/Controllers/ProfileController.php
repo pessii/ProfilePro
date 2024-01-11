@@ -66,11 +66,12 @@ class ProfileController extends Controller
             $user->save();
 
             DB::commit();
-
-            return redirect(route('profile'))->with('success', 'プロフィールが更新されました');
+            session()->flash('flashSuccess', 'プロフィールを保存しました');
+            return redirect(route('profile'));
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect(route('profile'))->with('success', 'プロフィールが更新されませんでした');
+            session()->flash('flashError', 'プロフィールの保存に失敗しました');
+            return redirect(route('profile'));
         }
     }
 }

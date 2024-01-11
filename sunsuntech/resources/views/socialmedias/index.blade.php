@@ -3,13 +3,6 @@
 @section('content')
 <h1 class="profile-heading">ソーシャルメディア編集<span class="edit-profile" style="margin-left: 10px;">social media editing</span></h1>
 
-<!-- メッセージを表示 -->
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
-
 <form method="POST" action="{{ route('socialmedia.update') }}" enctype="multipart/form-data">
     @csrf
     <h2 class="profile-heading-h2 slide-up-element-3">登録中ソーシャルメディア<span class="edit-profile-h2" style="margin-left: 10px;">registered social media</span></h2>
@@ -57,5 +50,33 @@
 
 @endsection
 @section('scripts')
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+        }
+
+        @if (Session::has('flashSuccess'))
+            toastr.success("{{ session('flashSuccess') }}");
+        @endif
+
+        @if (Session::has('flashError'))
+            toastr.error("{{ session('flashError') }}");
+        @endif
+
+        @if (Session::has('flashInfo'))
+            toastr.info("{{ session('flashInfo') }}");
+        @endif
+
+        @if (Session::has('flashWarning'))
+            toastr.warning("{{ session('flashWarning') }}");
+        @endif
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}");
+            @endforeach
+        @endif
+    </script>
 	<script src="{{ asset('/js/profile.js') }}"></script>
 @endsection

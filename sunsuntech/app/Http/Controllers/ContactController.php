@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -27,11 +29,21 @@ class ContactController extends Controller
         $contact->email = $request->input('email');
         $contact->content = $request->input('content');
         $contact->type = $request->input('category');
-        $contact->save();
 
-        // メールを送信
-        Mail::to('cnoeko@gmail.com')->send(new ContactFormMail($contact));
+        DB::beginTransaction();
+        try{
+            $contact->save();
 
-        return redirect()->route('contact.index')->with('success', 'お問い合わせありがとうございます。');
+            // メールを送信
+            Mail::to('cnoeko@gmail.com')->send(new ContactFormMail($contact));
+
+            DB::commit();
+            session()->flash('flashSuccess', 'お問い合わせありがとうございます');
+            return redirect()->route('contact.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            session()->flash('flashError', 'お問い合わせに失敗しました');
+            return redirect()->route('contact.index');
+        }
     }
 }
