@@ -3116,7 +3116,7 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   --bs-body-bg: linear-gradient(135deg,#479aa5, #5473cb 60%, #3e509d);
   background-image: var(--bs-body-bg);
   --bs-btn-color: #fff;

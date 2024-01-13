@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 
+    <link rel="shortcut icon" href="{{ asset('storage/images/icon.png') }}">
 </head>
 <body>
     <div id="app">
