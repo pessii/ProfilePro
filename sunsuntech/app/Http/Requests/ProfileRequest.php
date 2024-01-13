@@ -14,7 +14,7 @@ class ProfileRequest extends FormRequest
             'name' => 'required|string|max:255',
             'self_introduction' => 'required|string',
             'email' => 'required|email|unique:users,email,' . $user->id,
-            'password' => 'min:6'
+            'password' => 'nullable|min:6'
         ];
     }
 
